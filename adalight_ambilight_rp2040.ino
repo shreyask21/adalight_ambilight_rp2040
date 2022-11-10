@@ -24,17 +24,36 @@
 #define NUMBER_OF_LEDS (64U)
 #define LED_DATA_PIN (2U)
 /*****************************************************************************/
+
+
 #include <Adafruit_NeoPixel.h>
 Adafruit_NeoPixel strip(NUMBER_OF_LEDS, LED_DATA_PIN, NEO_GRB + NEO_KHZ800);
 
 void setup() {
   strip.begin();
+  strip.clear();
   strip.show();
-  strip.setBrightness(25);
-  strip.rainbow();
-  strip.show();
+  LED_Demo();
 }
 
 void loop() {
 
+}
+
+void LED_Demo(){
+  for(int i = 0; i<=64; i++){
+    strip.rainbow();
+    strip.setBrightness(i);
+    strip.show();
+    delay(25);
+  }
+  delay(1000);
+  for(int i = 64; i>0; i--){
+    strip.rainbow();
+    strip.setBrightness(i);
+    strip.show();
+    delay(25);
+  }
+  strip.clear();
+  strip.show();
 }
