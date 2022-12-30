@@ -21,8 +21,8 @@
 ******************************************************************************/
 
 /********************************* SETTINGS **********************************/
-#define NUMBER_OF_LEDS (64U)
-#define LED_DATA_PIN (2U)
+#define NUMBER_OF_LEDS 511               // 511 is the max supported num. leds
+#define LED_DATA_PIN 2                   // Set the correct pin here.
 /*****************************************************************************/
 
 
